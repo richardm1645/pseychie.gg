@@ -3,6 +3,8 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import Navbar from './components/Navbar';
+
 function App() {
   const [data, setData] = useState([]);
 
@@ -18,14 +20,17 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Data from MongoDB</h1>
-      <ul>
-        {data.map(item => (
-          <li key={item._id}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
+    <main className='layout'>
+      <Navbar />
+      <div>
+        <h1>Data from MongoDB</h1>
+        <ul>
+          {data.map(item => (
+            <li key={item._id}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 }
 
