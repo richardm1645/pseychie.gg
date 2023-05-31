@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Navbar from './components/Navbar';
+import ItemList from './components/ItemList';
 
 function App() {
   const [data, setData] = useState([]);
@@ -21,14 +22,17 @@ function App() {
 
   return (
     <main className='layout'>
-      <Navbar />
-      <div>
-        <h1>Data from MongoDB</h1>
-        <ul>
-          {data.map(item => (
-            <li key={item._id}>{item.name}</li>
-          ))}
-        </ul>
+      
+      <div className="absolute top-0 left-0 h-screen bg-banner-left bg-no-repeat -z-50"></div>
+      <div className="absolute top-0 right-0 h-screen bg-banner-right bg-no-repeat -z-50"></div>
+
+      <div className='z-10'>
+        <Navbar />
+      </div>
+      
+      
+      <div className="container mx-auto mt-20 max-w-[80%]">
+        <ItemList />
       </div>
     </main>
   );

@@ -6,7 +6,9 @@ module.exports = {
     fontFamily: {
       roboto: ["Roboto-Regular", "sans-serif"]
     },
-
+    maxWidth: {
+      '1/10': '10%'
+    },
     extend: {},
   },
   plugins: [],

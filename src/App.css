@@ -6,6 +6,17 @@
   src: url("/fonts/Roboto-Regular.ttf");
 }
 
+.bg-banner-left {
+  width: 10%;
+  background-image: url('./assets/images/Banner-left.png');
+}
+
+.bg-banner-right {
+  width: 10%;
+  background-image: url('./assets/images/Banner-right.png');
+}
+
+
 .App {
   text-align: center;
 }
