@@ -4,9 +4,12 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      roboto: ["Roboto-Regular", "sans-serif"]
+      roboto: ["Roboto-Regular", "sans-serif"],
+      geologica: ["Geologica_Auto-Bold", "sans-serif"]
     },
-
+    maxWidth: {
+      '1/10': '10%'
+    },
     extend: {},
   },
   plugins: [],

@@ -3,7 +3,7 @@ import logo from "../logo.png"
 
 export default function Navbar() {
   return (
-    <nav className="bg-purple-800 font-serif py-4 px-8 flex items-center justify-between">
+    <nav className="bg-purple-800 font-serif py-4 px-8 flex items-center justify-between z-50">
       <img src={logo} alt="Logo" href="/" className="h-10 w-auto" />
       <ul className="space-x-4 flex font-roboto">
         <li className="text-white hover:text-gray-300 font-roboto">
