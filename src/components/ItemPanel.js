@@ -1,7 +1,7 @@
 import React from 'react';
 
-
-export default function ItemPanel({ item }) { //Replace item with props when db connects
+//Props is deconstructed as the "item" object
+export default function ItemPanel({ item }) {
   const iconLocation = `/icons/${item.icon}`
 
   return (
@@ -10,13 +10,24 @@ export default function ItemPanel({ item }) { //Replace item with props when db 
         <div className="p-4 h-48">
           <div className="flex flex-col">
             <div className="flex justify-between mb-3">
-              <div className='flex items-center'>
-                <div className="relative w-12 h-12 mr-4"> 
-                  <img src='colors/BS.png' alt="My Image" className="max-w-10 drop-shadow-md" />               
+              <div className='flex propss-center'>
+                <div className="relative w-12 h-12 mr-4">
+                  
+                  {/* Conditionally renders the color group of the item */}
+                  {item.color.includes("bs") && (
+                    <img src='colors/BS.png' alt="Brutality-survival" className="max-w-10 drop-shadow-md" />
+                  )}
+
+                  {item.color.includes("b") && (
+                    <img src='colors/B.png' alt="Brutality" className="max-w-10 drop-shadow-md" />
+                  )}
+
+                  
+                                 
                   <img src={iconLocation} alt="Item Icon" className="absolute top-1 left-1 w-10 drop-shadow-md shadow-black opacity-90" />              
                 </div>
                 <span className="text-l font-bold max-w-xs">{item.name}</span>
-              </div>             
+              </div>
               <span className="text-xl font-geologica font-bold">{item.rating}</span>
             </div>
             <p className="text-sm">{item.description}</p>
