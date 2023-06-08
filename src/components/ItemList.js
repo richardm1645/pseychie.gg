@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import ItemPanel from "./ItemPanel";
 import axios from "axios";
 
@@ -22,7 +23,7 @@ export default function ItemList() {
     <div className="container mx-auto py-8">
       <div className="flex flex-wrap -mx-4">
         {data.map((item) => (
-          <ItemPanel key={item.id} item={item} />
+          <ItemPanel key={item.id} item={item}/>
         ))}
       </div>
     </div>
