@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
 import Navbar from './DescNavbar';
+import WikiButton from './WikiButton';
 
 export default function ItemDescription() {
 
@@ -35,6 +36,7 @@ export default function ItemDescription() {
       <div className="container mx-auto mt-20 max-w-[80%]">
         {item.name}
         {item.description}
+        <WikiButton link={item.wiki_page} />
       </div>
     </main>
   )
