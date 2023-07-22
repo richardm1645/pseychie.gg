@@ -8,7 +8,7 @@ export default function ItemSynergies(props) {
   
   useEffect(() => {
     // Fetch data from the API endpoint
-    axios.get(`http://localhost:5000/api/item/${props.synergy}`) // <--- Edit the API endpoint here
+    axios.get(`http://localhost:5000/api/item/${props.label}`) // <--- Edit the API endpoint here
       .then(response => {
         setItem(response.data);
       })
@@ -20,6 +20,7 @@ export default function ItemSynergies(props) {
   return (
     <div>
       {item.name}
+      {props.desc}
     </div>
   )
 }

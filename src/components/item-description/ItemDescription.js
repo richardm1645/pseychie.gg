@@ -63,8 +63,8 @@ export default function ItemDescription() {
         <SectionDivider sectionName="Synergies" />
 
         <div>
-          {synergies.map((synergy) => (
-            <ItemSynergies key={synergy} synergy={synergy}/>
+          {Object.keys(synergies).map((key) => (
+            <ItemSynergies key={key} label={key} value={synergies[key]} desc={synergies[key].description} />
           ))}
         </div>
       </div>
