@@ -57,7 +57,7 @@ export default function ItemDescription() {
         
 
         <div className='pt-5'>
-          <WikiButton link={item.wiki_page} />
+          <WikiButton link={item.wiki_page} text="Wiki Page" />
         </div>
         
         <SectionDivider sectionName="Synergies" />
