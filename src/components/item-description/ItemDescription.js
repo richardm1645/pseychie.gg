@@ -7,6 +7,7 @@ import WikiButton from './WikiButton';
 import ItemSynergies from './ItemSynergies';
 import DescPanel from './DescPanel';
 import SectionDivider from './SectionDivider';
+import Analysis from './Analysis';
 
 export default function ItemDescription() {
 
@@ -44,11 +45,16 @@ export default function ItemDescription() {
       
       <div className="container mx-auto mt-20 max-w-[70%]">
         <SectionDivider sectionName="Overview" />
-        <DescPanel 
-          name={item.name} 
-          desc={item.description}
-          icon={item.icon}
-        />
+
+        <div className='flex justify-between'>
+          <DescPanel 
+            name={item.name} 
+            desc={item.description}
+            icon={item.icon}
+          />
+          <Analysis analysis={item.analysis} rating={item.rating}/>
+        </div>
+        
 
         <div className='pt-5'>
           <WikiButton link={item.wiki_page} />
