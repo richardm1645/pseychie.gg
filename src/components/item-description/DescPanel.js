@@ -11,7 +11,8 @@ export default function DescPanel(props) {
           <span className="text-lg font-bold pl-5">{props.name}</span>
         </div>
       </div>
-      <p className="text-base">{props.desc}</p>
+      <hr className="flex-1 border-t-2 mt-1 border-black rounded-lg" />
+      <p className="text-base pt-2">{props.desc}</p>
     </div>
   )
 }
