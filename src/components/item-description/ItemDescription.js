@@ -5,6 +5,9 @@ import axios from "axios";
 import Navbar from './DescNavbar';
 import WikiButton from './WikiButton';
 import ItemSynergies from './ItemSynergies';
+import DescPanel from './DescPanel';
+import SectionDivider from './SectionDivider';
+import Analysis from './Analysis';
 
 export default function ItemDescription() {
 
@@ -40,14 +43,28 @@ export default function ItemDescription() {
         <Navbar />
       </div>
       
-      <div className="container mx-auto mt-20 max-w-[80%]">
-        {item.name}
-        {item.description}
-        <WikiButton link={item.wiki_page} />
+      <div className="container mx-auto mt-20 max-w-[70%]">
+        <SectionDivider sectionName="Overview" />
 
-        <div>Synergies
-          {synergies.map((synergy) => (
-            <ItemSynergies key={synergy} synergy={synergy}/>
+        <div className='flex justify-between'>
+          <DescPanel 
+            name={item.name} 
+            desc={item.description}
+            icon={item.icon}
+          />
+          <Analysis analysis={item.analysis} rating={item.rating}/>
+        </div>
+        
+
+        <div className='pt-5'>
+          <WikiButton link={item.wiki_page} text="Wiki Page" />
+        </div>
+        
+        <SectionDivider sectionName="Synergies" />
+
+        <div>
+          {Object.keys(synergies).map((key) => (
+            <ItemSynergies key={key} label={key} value={synergies[key]} desc={synergies[key].description} />
           ))}
         </div>
       </div>
